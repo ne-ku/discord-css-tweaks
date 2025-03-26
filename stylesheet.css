@@ -1,0 +1,144 @@
+/* --SETTINGS-- */
+/* scaling factor for chatbox button icons (e.g. gifs, emojis, ...) [default: 1] */
+body {
+    --_chat-button-scale: 1.2;
+}
+/* size (in pixels) of the server icons on the side [default: 48] */
+body {
+    --_server-icon-size: 55;
+}
+/* how much bigger the background for open folders is compared to the server icons (in pixels) [default: 0] */
+body {
+    --_folder-padding: 3;
+}
+/* scaling factor for number badges (ping indicators) [default: 1] */
+body {
+    --_number-badge-scale: 0.9;
+}
+/* scaling factor for number badges (ping indicators) for folders [default: 1] */
+body {
+    --_folder-number-badge-scale: 1;
+}
+/* amount of time (in seconds) that the transition between circle and rounded square takes when hovering over server icons [default: 0] */
+body {
+    --_server-icon-shape-transition-time: 0.1;
+}
+
+/* auto calculate scale & padding for server icons */
+body {
+    --_server-icon-scale: calc(var(--_server-icon-size) / 48);
+}
+body {
+    --_server-icon-padding: calc((var(--_server-icon-size) - 48) / 2 * 1px);
+}
+body {
+    --_server-icon-circle-border-radius: calc(var(--_server-icon-size) / 2 * 1px);
+}
+
+/* --CHAT BUTTONS-- */
+/* main chat box buttons sizing (gifs, stickers, etc.) */
+main form button > * {
+    scale:var(--_chat-button-scale);
+}
+
+/* --SERVER ICON SCALING-- */
+/* non-server icon sizing (discord icon for dms, create server, discover, ...) */
+[class*="listItemWrapper"] {
+    padding: var(--_server-icon-padding) !important;
+    scale: var(--_server-icon-scale);
+}
+/* server icon size */
+[aria-label="Servers"] [class*="blobContainer"] {
+    padding: var(--_server-icon-padding) !important;
+    scale: var(--_server-icon-scale);
+}
+/* sidebar folders */
+[aria-label="Servers"] ul {
+    height: unset !important;
+}
+[aria-label="Servers"] [class*="wrapper"][class*="isExpanded"] [class*="folderIcon"] svg {
+    scale: var(--_server-icon-scale);
+}
+[aria-label="Servers"] span[class*="expandedFolderBackground"] {
+    left: calc(var(--custom-guild-list-padding) - var(--guildbar-folder-size)/2 + var(--guildbar-avatar-size)/2 - var(--_folder-padding) * 1px) !important;
+    width: calc(var(--guildbar-folder-size) + var(--_folder-padding) * 2px) !important;
+    top: calc(-1px * var(--_folder-padding)) !important;
+    bottom: calc(-1px * var(--_folder-padding)) !important;
+}
+/* number badges (ping indicators) */
+[class*="listItemWrapper"] [class*="numberBadge"] {
+    scale: var(--_number-badge-scale);
+}
+[aria-label="Servers"] [class*="numberBadge"] {
+    scale: var(--_number-badge-scale);
+}
+[aria-label="Servers"] [class*="folderIcon"] [class*="numberBadge"] {
+    scale: var(--_folder-number-badge-scale);
+}
+
+/* --SERVER ICON SHAPE-- */
+/* server icon shape (circle when not hovered) */
+[aria-label="Servers"] [class*="blobContainer"] foreignObject {
+    border-radius: var(--_server-icon-circle-border-radius);
+    transition: border-radius calc(var(--_server-icon-shape-transition-time) * 1s);
+}
+[aria-label="Servers"] [class*="blobContainer"] foreignObject:has(> [class*="wrapper"][class*="selected"]) {
+    border-radius: unset;
+}
+/* server icon shape (fix icons being cut off on the bottom and right when circle) */
+[aria-label="Servers"] [class*="blobContainer"] svg {
+    padding: 0.01px;
+    scale: 1.01;
+}
+
+/* --DMS-- */
+/* fix inconsistent spacing on the sides of dm channels */
+[aria-label="Private channels"] li {
+    margin-right: 8px !important;
+}
+
+/* --TOP BAR-- */
+/* remove top bar */
+[class*="base"]:has(> [class*="bar"]) {
+    grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important;
+}
+[class*="base"] > [class*="bar"] {
+    position: fixed !important;
+    z-index: 1000 !important;
+    padding: 0 !important;
+}
+[class*="base"] > [class*="bar"] > :not([class*="trailing"]) {
+    display: none;
+}
+[class*="base"] > [class*="bar"] > [class*="trailing"] > :not([class*="recentsIcon"]) {
+    display: none;
+}
+/* reposition inbox button */
+[class*="base"] > [class*="bar"] > [class*="trailing"] > [class*="recentsIcon"] {
+    position: fixed !important;
+    top: 8px !important;
+    right: 8px !important;
+}
+/* reposition inbox button: add more margin at the top if there is a notice at the top (e.g. streamer mode) */
+[class*="base"]:has(> [class*="notice"]) > [class*="bar"] > [class*="trailing"] > [class*="recentsIcon"] {
+    top: 45px !important;
+}
+/* make space for inbox button */
+[aria-label="Channel header"] {
+    padding-right: calc(var(--space-xs) + 40px) !important;
+}
+[role="navigation"] {
+    padding-right: calc(var(--space-xs) + 32px) !important;
+}
+/* adjust spacing at top of server list */
+[aria-label="Servers sidebar"] {
+    margin-top: 8px;
+}
+/* remove unnecessary borders at the top */
+[class*="sidebar"] [class*="sidebarList"] {
+    border-radius: 0 !important;
+    border-top: none !important;
+}
+[class*="page"] > [class*="chat"] {
+    border-top: none !important;
+}
