@@ -6,7 +6,6 @@ REMOVE_FORMAT = r'^discord\.com##(.*)$'
 with open('ublock-filters.txt', 'r') as f:
     lines = f.readlines()
 
-# translate
 result = ''
 for line in lines:
     if re.match(STYLE_FORMAT, line):
