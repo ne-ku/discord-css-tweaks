@@ -17,11 +17,11 @@ discord.com##body:style(--_server-icon-scale: calc(var(--_server-icon-size) / 48
 discord.com##body:style(--_server-icon-padding: calc((var(--_server-icon-size) - 48) / 2 * 1px))
 discord.com##body:style(--_server-icon-circle-border-radius: calc(var(--_server-icon-size) / 2 * 1px))
 
-! --CHAT--
+! --CHAT BUTTONS--
 ! main chat box buttons sizing (gifs, stickers, etc.)
 discord.com##main form button > *:style(scale:var(--_chat-button-scale))
 
-! --SIDEBAR--
+! --SERVER ICON SCALING--
 ! non-server icon sizing (discord icon for dms, create server, discover, ...)
 discord.com##[class*="listItemWrapper"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
 ! server icon size
@@ -35,6 +35,7 @@ discord.com##[class*="listItemWrapper"] [class*="numberBadge"]:style(scale: var(
 discord.com##[aria-label="Servers"] [class*="numberBadge"]:style(scale: var(--_number-badge-scale))
 discord.com##[aria-label="Servers"] [class*="folderIcon"] [class*="numberBadge"]:style(scale: var(--_folder-number-badge-scale))
 
+! --SERVER ICON SHAPE--
 ! server icon shape (circle when not hovered)
 discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:style(border-radius: var(--_server-icon-circle-border-radius); transition: border-radius calc(var(--_server-icon-shape-transition-time) * 1s))
 discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:has(> [class*="wrapper"][class*="selected"]):style(border-radius: unset)
