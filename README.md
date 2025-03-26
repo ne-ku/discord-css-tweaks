@@ -1,7 +1,7 @@
 # neku's discord css tweaks
-some css filters for the ublock origin browser extension that make discord look more like before the recent update (2025/03/25)
+i didn't like how they scaled the buttons last update
 
-![preview of bigger server icons](media/screen.png)
+![preview of how it looks with silly red highlights](media/screen.png)
 
 ## what they do
 1. server icons are larger (can be adjusted in settings section)
@@ -9,8 +9,6 @@ some css filters for the ublock origin browser extension that make discord look 
 3. dm buttons are centered
 4. server icons are circular when you don't hover over them
 5. the bar at the top is removed and the inbox button moved down
-
-![preview of bigger chat button icons](media/chat-buttons.png)
 
 ## how to apply them
 if you have uBlock installed, go to settings by clicking on the extension's icon and then opening the dashboard (the gears icon in the bottom right of the menu).
