@@ -10,7 +10,7 @@ discord.com##body:style(--_number-badge-scale: 0.9)
 ! scaling factor for number badges (ping indicators) for folders [default: 1]
 discord.com##body:style(--_folder-number-badge-scale: 1)
 ! amount of time (in seconds) that the transition between circle and rounded square takes when hovering over server icons [default: 0]
-discord.com##body:style(--_folder-shape-transition-time: 0.1)
+discord.com##body:style(--_server-icon-shape-transition-time: 0.1)
 
 ! auto calculate scale & padding for server icons
 discord.com##body:style(--_server-icon-scale: calc(var(--_server-icon-size) / 48))
@@ -36,7 +36,7 @@ discord.com##[aria-label="Servers"] [class*="numberBadge"]:style(scale: var(--_n
 discord.com##[aria-label="Servers"] [class*="folderIcon"] [class*="numberBadge"]:style(scale: var(--_folder-number-badge-scale))
 
 ! server icon shape (circle when not hovered)
-discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:style(border-radius: var(--_server-icon-circle-border-radius); transition: border-radius calc(var(--_folder-shape-transition-time) * 1s))
+discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:style(border-radius: var(--_server-icon-circle-border-radius); transition: border-radius calc(var(--_server-icon-shape-transition-time) * 1s))
 discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:has(> [class*="wrapper"][class*="selected"]):style(border-radius: unset)
 ! server icon shape (fix icons being cut off on the bottom and right when circle)
 discord.com##[aria-label="Servers"] [class*="blobContainer"] svg:style(padding: 0.01px; scale: 1.01)
@@ -63,4 +63,3 @@ discord.com##[aria-label="Servers sidebar"]:style(margin-top: 8px)
 ! remove unnecessary borders at the top
 discord.com##[class*="sidebar"] [class*="sidebarList"]:style(border-radius: 0 !important; border-top: none !important)
 discord.com##[class*="page"] > [class*="chat"]:style(border-top: none !important)
-
