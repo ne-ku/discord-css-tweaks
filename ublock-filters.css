@@ -1,0 +1,50 @@
+! settings
+discord.com##body:style(--_chat-button-scale: 1.2) /*(default: 1)*/
+discord.com##body:style(--_server-icon-size: 55) /*in pixels (default: 48)*/
+discord.com##body:style(--_folder-padding: 3) /*in pixels (default: 0)*/
+discord.com##body:style(--_folder-shape-transition-time: 0.1) /*in seconds (default: 0)*/
+discord.com##body:style(--_number-badge-scale: 0.9) /*(default: 1)*/
+
+! auto calculate scale & padding for server icons
+discord.com##body:style(--_server-icon-scale: calc(var(--_server-icon-size) / 48))
+discord.com##body:style(--_server-icon-padding: calc((var(--_server-icon-size) - 48) / 2 * 1px))
+
+! main chat box buttons sizing (gifs, stickers, etc.)
+discord.com##main form button > *:style(scale:var(--_chat-button-scale))
+
+! sidebar non-server icon sizing (discord icon for dms, create server, discover, ...)
+discord.com##[class*="listItemWrapper"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
+!discord.com##[class*="listItemWrapper"] foreignObject:style(mask: url(#:r4:) !important)
+! sidebar server icon sizing
+discord.com##[aria-label="Servers"] [class*="blobContainer"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
+! sidebar server icon shape (circle when not hovered)
+discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:style(border-radius: calc(var(--_server-icon-size) / 2 * 1px); transition: border-radius calc(var(--_folder-shape-transition-time) * 1s))
+discord.com##[aria-label="Servers"] [class*="blobContainer"] foreignObject:has(> [class*="wrapper"][class*="selected"]):style(border-radius: unset)
+! sidebar server icon shape (fix icons being cut off on the bottom and right when circle)
+discord.com##[aria-label="Servers"] [class*="blobContainer"] svg:style(padding: 0.01px; scale: 1.01)
+! sidebar folders
+discord.com##[aria-label="Servers"] ul:style(height: unset !important)
+discord.com##[aria-label="Servers"] [class*="wrapper"][class*="isExpanded"] [class*="folderIcon"] svg:style(scale: var(--_server-icon-scale))
+discord.com##[aria-label="Servers"] span[class*="expandedFolderBackground"]:style(left: calc(var(--custom-guild-list-padding) - var(--guildbar-folder-size)/2 + var(--guildbar-avatar-size)/2 - var(--_folder-padding) * 1px) !important; width: calc(var(--guildbar-folder-size) + var(--_folder-padding) * 2px) !important; top: calc(-1px * var(--_folder-padding)) !important; bottom: calc(-1px * var(--_folder-padding)) !important)
+! sidebar number badge
+discord.com##[class*="listItemWrapper"] [class*="numberBadge"]:style(scale: var(--_number-badge-scale))
+discord.com##[aria-label="Servers"] [class*="numberBadge"]:style(scale: var(--_number-badge-scale))
+
+! fix inconsistent spacing on the sides of dm channels
+discord.com##[aria-label="Private channels"] li:style(margin-right: 8px !important)
+
+! remove top bar
+discord.com##[class*="base"]:has(> [class*="bar"]):style(grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important)
+discord.com##[class*="base"] > [class*="bar"]:style(position: fixed !important; z-index: 1000 !important; padding: 0 !important)
+discord.com##[class*="base"] > [class*="bar"] > :not([class*="trailing"])
+discord.com##[class*="base"] > [class*="bar"] > [class*="trailing"] > :not([class*="recentsIcon"])
+! reposition inbox button
+discord.com##[class*="base"] > [class*="bar"] > [class*="trailing"] > [class*="recentsIcon"]:style(position: fixed !important; top: 8px !important; right: 8px !important)
+! make space for inbox button
+discord.com##[aria-label="Channel header"]:style(padding-right: calc(var(--space-xs) + 40px) !important)
+discord.com##[role="navigation"]:style(padding-right: calc(var(--space-xs) + 32px) !important)
+! adjust 
+discord.com##[aria-label="Servers sidebar"]:style(margin-top: 8px)
+! remove unnecessary borders at the top
+discord.com##[class*="sidebar"] [class*="sidebarList"]:style(border-radius: 0 !important; border-top: none !important)
+discord.com##[class*="page"] > [class*="chat"]:style(border-top: none !important)
