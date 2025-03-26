@@ -42,7 +42,7 @@ discord.com##[class*="base"] > [class*="bar"] > [class*="trailing"] > [class*="r
 ! make space for inbox button
 discord.com##[aria-label="Channel header"]:style(padding-right: calc(var(--space-xs) + 40px) !important)
 discord.com##[role="navigation"]:style(padding-right: calc(var(--space-xs) + 32px) !important)
-! adjust 
+! adjust spacing at top of server list
 discord.com##[aria-label="Servers sidebar"]:style(margin-top: 8px)
 ! remove unnecessary borders at the top
 discord.com##[class*="sidebar"] [class*="sidebarList"]:style(border-radius: 0 !important; border-top: none !important)
