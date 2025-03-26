@@ -17,7 +17,7 @@ if you have uBlock installed, go to settings by clicking on the extension's icon
 
 ![where to find the settings](media/ublock-settings.png)
 
-in the settings, click on "My filters" at the top. copy the filters from `ublock-filters.txt` into the text box and then click on "Apply changes". once you refresh or open a new tab with discord running, the changes should be visible.
+in the settings, click on "My filters" at the top. copy the filters from [ublock-filters.txt](ublock-filters.txt) into the text box and then click on "Apply changes". once you refresh or open a new tab with discord running, the changes should be visible.
 
 ### remove individual filters
 apart from the settings, any of the other sections that start with `--SECTION NAME--` can be removed without side effects if there are tweaks you don't want to use.
