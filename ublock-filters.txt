@@ -14,7 +14,6 @@ discord.com##main form button > *:style(scale:var(--_chat-button-scale))
 
 ! sidebar non-server icon sizing (discord icon for dms, create server, discover, ...)
 discord.com##[class*="listItemWrapper"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
-!discord.com##[class*="listItemWrapper"] foreignObject:style(mask: url(#:r4:) !important)
 ! sidebar server icon sizing
 discord.com##[aria-label="Servers"] [class*="blobContainer"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
 ! sidebar server icon shape (circle when not hovered)
