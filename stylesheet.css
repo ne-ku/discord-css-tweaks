@@ -119,20 +119,33 @@ main form button > * {
     top: 8px !important;
     right: 8px !important;
 }
-/* reposition inbox button: add more margin at the top if there is a notice at the top (e.g. streamer mode) */
+/* -> add more margin at the top if there is a notice at the top (e.g. streamer mode) */
 [class*="base"]:has(> [class*="notice"]) > [class*="bar"] > [class*="trailing"] > [class*="recentsIcon"] {
     top: 45px !important;
 }
 /* make space for inbox button */
+/* -> general/dm section */
 [aria-label="Channel header"] {
     padding-right: calc(var(--space-xs) + 40px) !important;
 }
+/* -> inside servers */
 [role="navigation"] {
     padding-right: calc(var(--space-xs) + 32px) !important;
 }
+/* -> "browse channels"/"channels & roles" section */
+[class*="chat"] > section[class*="header"]:has(> [class*="upperContainer"] > [class*="toolbar"] > button) {
+    padding-right: calc(var(--space-xs) + 40px) !important;
+}
+/* -> discover (apps and servers) section */
+[class*="headerBar"]:has([class*="searchIcon"]) {
+    padding-right: calc(var(--space-xs) + 40px) !important;
+}
+[class*="headerBar"] [class*="searchBar"] {
+    margin-right: calc(40px - var(--space-xs)) !important;
+}
 /* adjust spacing at top of server list */
-[aria-label="Servers sidebar"] {
-    margin-top: 8px;
+[aria-label="Servers sidebar"] > ul > [class*="itemsContainer"] [class*="tutorialContainer"]:first-of-type {
+    padding-top: 8px !important;
 }
 /* remove unnecessary borders at the top */
 [class*="sidebar"] [class*="sidebarList"] {

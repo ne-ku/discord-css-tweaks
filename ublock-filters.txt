@@ -54,13 +54,20 @@ discord.com##[class*="base"] > [class*="bar"] > :not([class*="trailing"])
 discord.com##[class*="base"] > [class*="bar"] > [class*="trailing"] > :not([class*="recentsIcon"])
 ! reposition inbox button
 discord.com##[class*="base"] > [class*="bar"] > [class*="trailing"] > [class*="recentsIcon"]:style(position: fixed !important; top: 8px !important; right: 8px !important)
-! reposition inbox button: add more margin at the top if there is a notice at the top (e.g. streamer mode)
+! -> add more margin at the top if there is a notice at the top (e.g. streamer mode)
 discord.com##[class*="base"]:has(> [class*="notice"]) > [class*="bar"] > [class*="trailing"] > [class*="recentsIcon"]:style(top: 45px !important)
 ! make space for inbox button
+! -> general/dm section
 discord.com##[aria-label="Channel header"]:style(padding-right: calc(var(--space-xs) + 40px) !important)
+! -> inside servers
 discord.com##[role="navigation"]:style(padding-right: calc(var(--space-xs) + 32px) !important)
+! -> "browse channels"/"channels & roles" section
+discord.com##[class*="chat"] > section[class*="header"]:has(> [class*="upperContainer"] > [class*="toolbar"] > button):style(padding-right: calc(var(--space-xs) + 40px) !important)
+! -> discover (apps and servers) section
+discord.com##[class*="headerBar"]:has([class*="searchIcon"]):style(padding-right: calc(var(--space-xs) + 40px) !important)
+discord.com##[class*="headerBar"] [class*="searchBar"]:style(margin-right: calc(40px - var(--space-xs)) !important)
 ! adjust spacing at top of server list
-discord.com##[aria-label="Servers sidebar"]:style(margin-top: 8px)
+discord.com##[aria-label="Servers sidebar"] > ul > [class*="itemsContainer"] [class*="tutorialContainer"]:first-of-type:style(padding-top: 8px !important)
 ! remove unnecessary borders at the top
 discord.com##[class*="sidebar"] [class*="sidebarList"]:style(border-radius: 0 !important; border-top: none !important)
 discord.com##[class*="page"] > [class*="chat"]:style(border-top: none !important)
