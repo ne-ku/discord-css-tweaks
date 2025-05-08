@@ -45,7 +45,7 @@ section[class*="chatContent"] form button > * {
     scale:var(--_chat-button-scale);
 }
 
-/* --SERVER ICON SCALING-- */
+/* --SIDEBAR ICON SCALING-- */
 /* non-server icon sizing (discord icon for dms, create server, discover, ...) */
 [class*="listItemWrapper"] {
     padding: var(--_server-icon-padding) !important;
@@ -55,6 +55,13 @@ section[class*="chatContent"] form button > * {
 [aria-label="Servers"] [class*="blobContainer"] {
     padding: var(--_server-icon-padding) !important;
     scale: var(--_server-icon-scale);
+}
+/* dm icon spacing */
+nav #guild-list-unread-dms {
+    gap: 14px !important;
+}
+nav #guild-list-unread-dms:has(div) {
+    padding-bottom: 6px !important;
 }
 /* sidebar folders */
 [aria-label="Servers"] ul {

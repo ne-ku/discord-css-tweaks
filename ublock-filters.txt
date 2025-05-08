@@ -23,11 +23,14 @@ discord.com##main form button > *:style(scale:var(--_chat-button-scale))
 ! voice chat text box
 discord.com##section[class*="chatContent"] form button > *:style(scale:var(--_chat-button-scale))
 
-! --SERVER ICON SCALING--
+! --SIDEBAR ICON SCALING--
 ! non-server icon sizing (discord icon for dms, create server, discover, ...)
 discord.com##[class*="listItemWrapper"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
 ! server icon size
 discord.com##[aria-label="Servers"] [class*="blobContainer"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
+! dm icon spacing
+discord.com##nav #guild-list-unread-dms:style(gap: 14px !important)
+discord.com##nav #guild-list-unread-dms:has(div):style(padding-bottom: 6px !important)
 ! sidebar folders
 discord.com##[aria-label="Servers"] ul:style(height: unset !important)
 discord.com##[aria-label="Servers"] [class*="folderButton"][aria-expanded] [class*="folderIcon"] svg:style(scale: var(--_server-icon-scale))
