@@ -20,6 +20,8 @@ discord.com##body:style(--_server-icon-circle-border-radius: calc(var(--_server-
 ! --CHAT BUTTONS--
 ! main chat box buttons sizing (gifs, stickers, etc.)
 discord.com##main form button > *:style(scale:var(--_chat-button-scale))
+! voice chat text box
+discord.com##section[class*="chatContent"] form button > *:style(scale:var(--_chat-button-scale))
 
 ! --SERVER ICON SCALING--
 ! non-server icon sizing (discord icon for dms, create server, discover, ...)
@@ -49,7 +51,7 @@ discord.com##[aria-label="Private channels"] li:style(margin-right: 8px !importa
 ! --TOP BAR--
 ! remove top bar
 discord.com##[class*="base"]:has(> [class*="bar"]):style(grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important)
-discord.com##[class*="base"] > [class*="bar"]:style(position: fixed !important; z-index: 1000 !important; padding: 0 !important)
+discord.com##[class*="base"] > [class*="bar"]:style(position: fixed !important; z-index: 1003 !important; padding: 0 !important)
 discord.com##[class*="base"] > [class*="bar"] > :not([class*="trailing"])
 discord.com##[class*="base"] > [class*="bar"] > [class*="trailing"] > :not([class*="recentsIcon"])
 ! reposition inbox button
@@ -66,6 +68,9 @@ discord.com##[class*="chat"] > section[class*="header"]:has(> [class*="upperCont
 ! -> discover (apps and servers) section
 discord.com##[class*="headerBar"]:has([class*="searchIcon"]):style(padding-right: calc(var(--space-xs) + 40px) !important)
 discord.com##[class*="headerBar"] [class*="searchBar"]:style(margin-right: calc(40px - var(--space-xs)) !important)
+! -> in voice chat
+discord.com##section:has([aria-label="Show Chat"]):style(padding-right: calc(var(--space-xs) + 32px) !important)
+discord.com##[aria-label="Show Chat"]:style(margin-right: 8px !important)
 ! adjust spacing at top of server list
 discord.com##[aria-label="Servers sidebar"] > ul > [class*="itemsContainer"] [class*="tutorialContainer"]:first-of-type:style(padding-top: 8px !important)
 ! remove unnecessary borders at the top

@@ -40,6 +40,10 @@ body {
 main form button > * {
     scale:var(--_chat-button-scale);
 }
+/* voice chat text box */
+section[class*="chatContent"] form button > * {
+    scale:var(--_chat-button-scale);
+}
 
 /* --SERVER ICON SCALING-- */
 /* non-server icon sizing (discord icon for dms, create server, discover, ...) */
@@ -104,7 +108,7 @@ main form button > * {
 }
 [class*="base"] > [class*="bar"] {
     position: fixed !important;
-    z-index: 1000 !important;
+    z-index: 1003 !important;
     padding: 0 !important;
 }
 [class*="base"] > [class*="bar"] > :not([class*="trailing"]) {
@@ -142,6 +146,13 @@ main form button > * {
 }
 [class*="headerBar"] [class*="searchBar"] {
     margin-right: calc(40px - var(--space-xs)) !important;
+}
+/* -> in voice chat */
+section:has([aria-label="Show Chat"]) {
+    padding-right: calc(var(--space-xs) + 32px) !important;
+}
+[aria-label="Show Chat"] {
+    margin-right: 8px !important;
 }
 /* adjust spacing at top of server list */
 [aria-label="Servers sidebar"] > ul > [class*="itemsContainer"] [class*="tutorialContainer"]:first-of-type {
