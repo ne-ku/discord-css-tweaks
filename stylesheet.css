@@ -56,10 +56,10 @@ main form button > * {
 [aria-label="Servers"] ul {
     height: unset !important;
 }
-[aria-label="Servers"] [class*="wrapper"][class*="isExpanded"] [class*="folderIcon"] svg {
+[aria-label="Servers"] [class*="folderButton"][aria-expanded] [class*="folderIcon"] svg {
     scale: var(--_server-icon-scale);
 }
-[aria-label="Servers"] span[class*="expandedFolderBackground"] {
+[aria-label="Servers"] span[class*="folderGroupBackground"] {
     left: calc(var(--custom-guild-list-padding) - var(--guildbar-folder-size)/2 + var(--guildbar-avatar-size)/2 - var(--_folder-padding) * 1px) !important;
     width: calc(var(--guildbar-folder-size) + var(--_folder-padding) * 2px) !important;
     top: calc(-1px * var(--_folder-padding)) !important;

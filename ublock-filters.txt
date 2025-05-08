@@ -28,8 +28,8 @@ discord.com##[class*="listItemWrapper"]:style(padding: var(--_server-icon-paddin
 discord.com##[aria-label="Servers"] [class*="blobContainer"]:style(padding: var(--_server-icon-padding) !important; scale: var(--_server-icon-scale))
 ! sidebar folders
 discord.com##[aria-label="Servers"] ul:style(height: unset !important)
-discord.com##[aria-label="Servers"] [class*="wrapper"][class*="isExpanded"] [class*="folderIcon"] svg:style(scale: var(--_server-icon-scale))
-discord.com##[aria-label="Servers"] span[class*="expandedFolderBackground"]:style(left: calc(var(--custom-guild-list-padding) - var(--guildbar-folder-size)/2 + var(--guildbar-avatar-size)/2 - var(--_folder-padding) * 1px) !important; width: calc(var(--guildbar-folder-size) + var(--_folder-padding) * 2px) !important; top: calc(-1px * var(--_folder-padding)) !important; bottom: calc(-1px * var(--_folder-padding)) !important)
+discord.com##[aria-label="Servers"] [class*="folderButton"][aria-expanded] [class*="folderIcon"] svg:style(scale: var(--_server-icon-scale))
+discord.com##[aria-label="Servers"] span[class*="folderGroupBackground"]:style(left: calc(var(--custom-guild-list-padding) - var(--guildbar-folder-size)/2 + var(--guildbar-avatar-size)/2 - var(--_folder-padding) * 1px) !important; width: calc(var(--guildbar-folder-size) + var(--_folder-padding) * 2px) !important; top: calc(-1px * var(--_folder-padding)) !important; bottom: calc(-1px * var(--_folder-padding)) !important)
 ! number badges (ping indicators)
 discord.com##[class*="listItemWrapper"] [class*="numberBadge"]:style(scale: var(--_number-badge-scale))
 discord.com##[aria-label="Servers"] [class*="numberBadge"]:style(scale: var(--_number-badge-scale))
