@@ -155,11 +155,12 @@ nav #guild-list-unread-dms:has(div) {
     margin-right: calc(40px - var(--space-xs)) !important;
 }
 /* -> in voice chat */
-section:has([aria-label="Show Chat"]) {
+section:has([aria-label*="Show Chat"]) {
     padding-right: calc(var(--space-xs) + 32px) !important;
 }
-[aria-label="Show Chat"] {
+button[aria-label*="Show Chat"] {
     margin-right: 8px !important;
+    scale:0.9;
 }
 /* adjust spacing at top of server list */
 [aria-label="Servers sidebar"] > ul > [class*="itemsContainer"] [class*="tutorialContainer"]:first-of-type {

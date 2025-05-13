@@ -72,8 +72,8 @@ discord.com##[class*="chat"] > section[class*="header"]:has(> [class*="upperCont
 discord.com##[class*="headerBar"]:has([class*="searchIcon"]):style(padding-right: calc(var(--space-xs) + 40px) !important)
 discord.com##[class*="headerBar"] [class*="searchBar"]:style(margin-right: calc(40px - var(--space-xs)) !important)
 ! -> in voice chat
-discord.com##section:has([aria-label="Show Chat"]):style(padding-right: calc(var(--space-xs) + 32px) !important)
-discord.com##[aria-label="Show Chat"]:style(margin-right: 8px !important)
+discord.com##section:has([aria-label*="Show Chat"]):style(padding-right: calc(var(--space-xs) + 32px) !important)
+discord.com##button[aria-label*="Show Chat"]:style(margin-right: 8px !important; scale:0.9)
 ! adjust spacing at top of server list
 discord.com##[aria-label="Servers sidebar"] > ul > [class*="itemsContainer"] [class*="tutorialContainer"]:first-of-type:style(padding-top: 8px !important)
 ! remove unnecessary borders at the top
